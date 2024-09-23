@@ -66,11 +66,10 @@ contract RewardToken is ERC20 {
      */
     function mint(address account, uint256 amount)
         public
-        // onlyOperator
+        onlyOperator
         returns (bool)
     {
-        //Note: Intentionally not checking for operator  
-        // So Evaluator can mint tokens to their account and play around with the system
+        
         _mint(account, amount);
         return true;
     }
