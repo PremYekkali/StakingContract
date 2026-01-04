@@ -59,3 +59,14 @@ Updates global reward distribution state based on elapsed time.
 ### getStatsData
 Returns protocol and user level statistics including estimated rewards and unlocked rewards.
 
+## Staking Lifecycle
+1. Contract is deployed with staking start time, staking period, total reward, and vault address
+2. Users stake tokens during the active staking window
+3. Rewards accrue continuously over time
+4. Users may claim rewards or withdraw stake at any time
+5. Undistributed rewards are transferred to the vault address
+
+## Requirements
+- Solidity version 0.5.7
+- ERC20 compliant stake and reward tokens
+- SafeMath library for arithmetic safety
