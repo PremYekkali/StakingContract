@@ -70,3 +70,12 @@ Returns protocol and user level statistics including estimated rewards and unloc
 - Solidity version 0.5.7
 - ERC20 compliant stake and reward tokens
 - SafeMath library for arithmetic safety
+
+## Security Notes
+- Uses SafeMath to prevent overflow and underflow
+- Reward calculation prevents negative balances
+- Global state is updated before user level accounting
+- Unclaimed rewards are redirected to a vault address
+
+## Disclaimer
+This contract is provided as is and has not been audited. Review thoroughly before using in production.
