@@ -39,6 +39,12 @@ Earned interest is calculated as:
 
 This ensures users cannot over earn or double claim rewards.
 
+## Design Decisions
+- Uses a global yield per token model to avoid per user loops
+- Separates stake accounting from reward claiming for flexibility
+- Handles zero stake scenarios by redirecting rewards to a vault
+- Supports multiple stake and withdraw actions per user without precision loss
+
 ## Core Functions
 
 ### stake
