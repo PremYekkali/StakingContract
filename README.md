@@ -83,5 +83,11 @@ Returns protocol and user level statistics including estimated rewards and unloc
 - Global state is updated before user level accounting
 - Unclaimed rewards are redirected to a vault address
 
+## Known Limitations
+- Contract does not support early staking before the configured start time
+- Reward rate is fixed at deployment and cannot be modified
+- No emergency withdraw mechanism is implemented
+- Solidity version is locked to 0.5.7
+
 ## Disclaimer
 This contract is provided as is and has not been audited. Review thoroughly before using in production.
