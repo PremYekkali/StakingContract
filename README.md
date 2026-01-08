@@ -78,10 +78,11 @@ Returns protocol and user level statistics including estimated rewards and unloc
 - SafeMath library for arithmetic safety
 
 ## Security Notes
-- Uses SafeMath to prevent overflow and underflow
-- Reward calculation prevents negative balances
-- Global state is updated before user level accounting
-- Unclaimed rewards are redirected to a vault address
+- Uses SafeMath for all arithmetic operations
+- Prevents reward over distribution via buy in rate accounting
+- Updates global state before modifying user balances
+- Avoids negative reward calculations
+- Redirects rewards to vault when no active stakers exist
 
 ## Known Limitations
 - Contract does not support early staking before the configured start time
