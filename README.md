@@ -72,6 +72,13 @@ Returns protocol and user level statistics including estimated rewards and unloc
 4. Users may claim rewards or withdraw stake at any time
 5. Undistributed rewards are transferred to the vault address
 
+## Read Only Helper Functions
+The contract exposes multiple view functions to help frontends and analytics tools.
+
+- getStakerData returns user stake and withdrawn rewards
+- getYieldData returns global and user yield metrics
+- getStatsData returns protocol and user level reward statistics
+
 ## Requirements
 - Solidity version 0.5.7
 - ERC20 compliant stake and reward tokens
