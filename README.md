@@ -39,6 +39,10 @@ Earned interest is calculated as:
 
 This ensures users cannot over earn or double claim rewards.
 
+### Reward Timing Behavior
+If the staking period has ended, reward generation stops automatically.  
+Any rewards generated after the staking window are not distributed to stakers.
+
 ## Design Decisions
 - Uses a global yield per token model to avoid per user loops
 - Separates stake accounting from reward claiming for flexibility
