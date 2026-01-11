@@ -43,6 +43,9 @@ This ensures users cannot over earn or double claim rewards.
 If the staking period has ended, reward generation stops automatically.  
 Any rewards generated after the staking window are not distributed to stakers.
 
+## Vault Handling
+If rewards are generated while no tokens are staked, the generated reward amount is transferred to the vault address to prevent reward loss or imbalance.
+
 ## Design Decisions
 - Uses a global yield per token model to avoid per user loops
 - Separates stake accounting from reward claiming for flexibility
