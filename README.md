@@ -9,7 +9,7 @@ The contract fairly distributes rewards based on stake size and staking duration
 ## Key Features
 - ERC20 token staking with time based reward distribution
 - Linear reward unlocking over a predefined staking period
-- Accurate per user reward accounting using global yield per token
+- Accurate per user reward accounting using cumulative global yield per token
 - Support for multiple stakes and partial withdrawals
 - Automatic handling of unclaimed rewards via a vault address
 
