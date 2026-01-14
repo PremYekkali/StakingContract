@@ -23,7 +23,7 @@ ERC20 token deposited by users for staking
 ERC20 token distributed as staking rewards
 
 ### InterestData
-Tracks global staking state including total staked amount and accumulated yield per token
+Maintains global staking state including total staked amount, accumulated yield per token, and last update timestamp
 
 ### Staker
 Tracks individual user stake, withdrawn rewards, and buy in rate for accurate accounting
