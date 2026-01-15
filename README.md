@@ -62,7 +62,7 @@ Allows users to stake tokens after approving the contract. Staking is only allow
 Allows users to claim accrued rewards without unstaking their tokens.
 
 ### withdrawStakeAndInterest
-Withdraws both the staked tokens and any accrued rewards.
+Withdraws a specified amount of staked tokens and automatically settles any pending rewards before updating balances.
 
 ### calculateInterest
 Returns the current claimable reward for a user.
