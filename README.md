@@ -77,7 +77,7 @@ Returns protocol and user level statistics including estimated rewards and unloc
 1. Contract is deployed with staking start time, staking period, total reward, and vault address
 2. Users stake tokens during the active staking window
 3. Rewards accrue continuously over time
-4. Users may claim rewards or withdraw stake at any time
+4. Users may claim rewards independently or withdraw stake, with rewards automatically settled during stake withdrawal
 5. Undistributed rewards are transferred to the vault address
 
 ## Read Only Helper Functions
