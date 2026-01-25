@@ -1,5 +1,9 @@
 # Staking Smart Contract
 
+![Solidity](https://img.shields.io/badge/solidity-0.5.7-363636?style=flat&logo=solidity)
+![License](https://img.shields.io/badge/license-MIT-blue)
+---
+
 ## Overview
 This repository contains a Solidity based staking contract that enables users to stake ERC20 tokens and earn rewards over a fixed staking period. Rewards accrue continuously and are distributed proportionally based on stake size and time participation using a global yield per token model.
 
