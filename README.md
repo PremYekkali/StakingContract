@@ -5,15 +5,15 @@
 ---
 
 ## Overview
-This repository contains a Solidity based staking contract that enables users to stake ERC20 tokens and earn rewards over a fixed staking period. Rewards accrue continuously and are distributed proportionally based on stake size and time participation using a global yield per token model.
+This repository contains a Solidity-based staking contract that enables users to stake ERC20 tokens and earn rewards over a fixed staking period. Rewards accrue continuously and are distributed proportionally based on stake size and time participation using a global yield per token model.
 
 
-The contract fairly distributes rewards based on stake size and staking duration while supporting multiple stake and withdrawal operations.
+The contract fairly distributes rewards based on stake size and staking duration while supporting multiple stakes and withdrawal operations.
 
 ## Key Features
-- ERC20 token staking with time based reward distribution
+- ERC20 token staking with time-based reward distribution
 - Linear reward unlocking over a predefined staking period
-- Accurate per user reward accounting using cumulative global yield per token
+- Accurate per-user reward accounting using cumulative global yield per token
 - Support for multiple stakes and partial withdrawals
 - Automatic handling of unclaimed rewards via a vault address
 
@@ -27,10 +27,10 @@ ERC20 token deposited by users for staking
 ERC20 token distributed as staking rewards
 
 ### InterestData
-Maintains global staking state including total staked amount, accumulated yield per token, and last update timestamp
+Maintains global staking state, including total staked amount, accumulated yield per token, and last update timestamp
 
 ### Staker
-Tracks individual user stake, withdrawn rewards, and buy in rate for accurate accounting
+Tracks individual user stake, withdrawn rewards, and buy-in rate for accurate accounting
 
 ## Reward Distribution Logic
 Rewards are distributed linearly over the staking period.
@@ -42,7 +42,7 @@ Earned interest is calculated as:
 (TotalStaked × GlobalYieldPerToken)
 − (StakeBuyinRate + WithdrawnToDate)
 
-This ensures users cannot over earn or double claim rewards.
+This ensures users cannot overearn or double-claim rewards.
 
 ### Reward Timing Behavior
 If the staking period has ended, reward generation stops automatically.  
@@ -52,7 +52,7 @@ Any rewards generated after the staking window are not distributed to stakers.
 If rewards are generated while no tokens are staked, the generated reward amount is transferred to the vault address to prevent reward loss or imbalance.
 
 ## Design Decisions
-- Uses a global yield per token model to avoid per user loops
+- Uses a global yield per token model to avoid per-user loops
 - Separates stake accounting from reward claiming for flexibility
 - Handles zero stake scenarios by redirecting rewards to a vault
 - Supports multiple stake and withdraw actions per user without precision loss
@@ -72,36 +72,36 @@ Withdraws a specified amount of staked tokens and automatically settles any pend
 Returns the current claimable reward for a user.
 
 ### updateGlobalYield
-Updates global reward distribution state based on elapsed time.
+Updates the global reward distribution state based on elapsed time.
 
 ### getStatsData
-Returns protocol and user level statistics including estimated rewards and unlocked rewards.
+Returns protocol and user-level statistics, including estimated rewards and unlocked rewards.
 
 ## Staking Lifecycle
 1. Contract is deployed with staking start time, staking period, total reward, and vault address
 2. Users stake tokens during the active staking window
 3. Rewards accrue continuously over time
-4. Users may claim rewards independently or withdraw stake, with rewards automatically settled during stake withdrawal
+4. Users may claim rewards independently or withdraw their stake, with rewards automatically settled during stake withdrawal
 5. Undistributed rewards are transferred to the vault address
 
-## Read Only Helper Functions
+## Read-Only Helper Functions
 The contract exposes multiple view functions to help frontends and analytics tools.
 
 - getStakerData returns user stake and withdrawn rewards
 - getYieldData returns global and user yield metrics
-- getStatsData returns protocol and user level reward statistics
+- getStatsData returns protocol and user-level reward statistics
 
 ## Requirements
 - Solidity version 0.5.7
-- ERC20 compliant stake and reward tokens
+- ERC20-compliant stake and reward tokens
 - SafeMath library for arithmetic safety
 
 ## Security Notes
 - Uses SafeMath for all arithmetic operations
-- Prevents reward over distribution via buy in rate accounting
+- Prevents reward over-distribution via buy-in rate accounting
 - Updates global state before modifying user balances
 - Avoids negative reward calculations
-- Redirects rewards to vault when no active stakers exist
+- Redirects rewards to the vault when no active stakers exist
 
 ## Known Limitations
 - Contract does not support early staking before the configured start time
