@@ -55,7 +55,7 @@ If rewards are generated while no tokens are staked, the generated reward amount
 - Uses a global yield per token model to avoid per-user loops
 - Separates stake accounting from reward claiming for flexibility
 - Handles zero stake scenarios by redirecting rewards to a vault
-- Supports multiple stake and withdraw actions per user without precision loss
+- Supports multiple `stake` and `withdraw` actions per user without precision loss
 
 ## Core Functions
 
@@ -106,7 +106,7 @@ The contract exposes multiple view functions to help frontends and analytics too
 ## Known Limitations
 - Contract does not support early staking before the configured start time
 - Reward rate is fixed at deployment and cannot be modified
-- No emergency withdraw mechanism is implemented
+- No emergency `withdraw` mechanism is implemented
 - Solidity version is locked to 0.5.7
 
 ## Disclaimer
