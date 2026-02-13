@@ -39,9 +39,10 @@ Global yield per token increases based on elapsed time and total rewards availab
 
 Earned interest is calculated as:
 
+```
 (TotalStaked × GlobalYieldPerToken)
 − (StakeBuyinRate + WithdrawnToDate)
-
+```
 This ensures users cannot overearn or double-claim rewards.
 
 ### Reward Timing Behavior
