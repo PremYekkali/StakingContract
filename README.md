@@ -83,7 +83,7 @@ Returns protocol and user-level statistics, including estimated rewards and unlo
 2. Users stake tokens during the active staking window
 3. Rewards accrue continuously over time
 4. Users may claim rewards independently or withdraw their stake, with rewards automatically settled during stake withdrawal
-5. Undistributed rewards are transferred to the vault address
+5. Undistributed rewards are transferred to the vault address, which was set during deployment.
 
 ## Read-Only Helper Functions
 The contract exposes multiple view functions to help frontends and analytics tools.
