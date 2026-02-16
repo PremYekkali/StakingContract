@@ -115,8 +115,8 @@ contract Staking {
             stakeToken.transferFrom(msg.sender, address(this), _amount),
             "TransferFrom failed, make sure you approved token transfer"
         );
-        uint newlyInterestGenerated = now.sub(interestData.lastUpdated).mul(totalReward).div(stakingPeriod);
-        interestData.lastUpdated = now;
+        uint timeSinceLastUpdate = _timeSinceLastUpdate();
+        uint newlyInterestGenerated = timeSinceLastUpdate.mul(totalReward).div(stakingPeriod);
         updateGlobalYieldPerToken(newlyInterestGenerated);
         updateStakeData(msg.sender, _amount);
         emit Staked(msg.sender, _amount, interestData.globalYieldPerToken);
@@ -302,7 +302,9 @@ contract Staking {
         uint256 _interestGenerated
     ) internal {
         if (interestData.globalTotalStaked == 0) {
-            require(rewardToken.transfer(vaultAddress, _interestGenerated), "Transfer failed while trasfering to vault");
+            if (_interestGenerated > 0) {
+                require(rewardToken.transfer(vaultAddress, _interestGenerated), "Transfer failed while trasfering to vault");
+            }
             return;
         }
         interestData.globalYieldPerToken = interestData.globalYieldPerToken.add(
@@ -394,4 +396,5 @@ contract Staking {
 
     }
 }
+
 
