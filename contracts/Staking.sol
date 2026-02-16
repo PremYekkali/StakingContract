@@ -226,7 +226,7 @@ contract Staking {
         emit InterestCollected(msg.sender, interest, interestData.globalYieldPerToken);
     }
 
-    function updateGlobalYield() public {
+    function updateGlobalYield() external {
         uint timeSinceLastUpdate = _timeSinceLastUpdate();
         uint newlyInterestGenerated = timeSinceLastUpdate.mul(totalReward).div(stakingPeriod);
         updateGlobalYieldPerToken(newlyInterestGenerated);
@@ -396,5 +396,6 @@ contract Staking {
 
     }
 }
+
 
 
