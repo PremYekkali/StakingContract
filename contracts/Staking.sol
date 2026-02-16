@@ -110,11 +110,11 @@ contract Staking {
      */
     function stake(uint256 _amount) external {
         require(_amount > 0, "You need to stake a positive token amount");
+        require(now > stakingStartTime, "Can not stake after staking period passed");
         require(
             stakeToken.transferFrom(msg.sender, address(this), _amount),
             "TransferFrom failed, make sure you approved token transfer"
         );
-        require(now.sub(stakingStartTime) <= stakingPeriod, "Can not stake after staking period passed");
         uint newlyInterestGenerated = now.sub(interestData.lastUpdated).mul(totalReward).div(stakingPeriod);
         interestData.lastUpdated = now;
         updateGlobalYieldPerToken(newlyInterestGenerated);
@@ -216,6 +216,10 @@ contract Staking {
         
         updateGlobalYieldPerToken(newlyInterestGenerated);
         uint256 interest = calculateInterest(msg.sender);
+        if (interest == 0) {
+            //Avoids unnecessary calls and improves gas if there is no interest accumulated
+            return;
+        }
         Staker storage stakerData = interestData.stakers[msg.sender];
         stakerData.withdrawnToDate = stakerData.withdrawnToDate.add(interest);
         require(rewardToken.transfer(msg.sender, interest), "Withdraw interest transfer failed");
@@ -390,3 +394,4 @@ contract Staking {
 
     }
 }
+
