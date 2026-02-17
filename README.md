@@ -100,7 +100,7 @@ The contract exposes multiple view functions to help frontends and analytics too
 ## Security Notes
 - Uses SafeMath for all arithmetic operations
 - Prevents reward over-distribution via buy-in rate accounting
-- Updates global state before modifying user balances
+- Updates global state (interest and stake accounting) before modifying user balances, ensuring reward withdrawals are safe from reentrancy exploits
 - Avoids negative reward calculations
 - Redirects rewards to the vault when no active stakers exist
 
