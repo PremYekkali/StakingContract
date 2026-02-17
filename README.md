@@ -50,7 +50,7 @@ If the staking period has ended, reward generation stops automatically.
 Any rewards generated after the staking window are not distributed to stakers.
 
 ## Vault Handling
-If rewards are generated while no tokens are staked, the generated reward amount is transferred to the vault address to prevent reward loss or imbalance.
+If rewards are generated while no tokens are staked (e.g., before any user stakes), the generated reward amount is automatically transferred to the vault address. This ensures no rewards are lost and maintains proper accounting.
 
 ## Design Decisions
 - Uses a global yield per token model to avoid per-user loops
