@@ -15,7 +15,7 @@ The contract fairly distributes rewards based on stake size and staking duration
 - Linear reward unlocking over a predefined staking period
 - Accurate per-user reward accounting using cumulative global yield per token
 - Support for multiple stakes and partial withdrawals
-- Automatic handling of unclaimed rewards via a vault address
+- Automatic handling of unclaimed rewards(Accrued between stake start time and 1st stake) via a vault address
 
 ## Contract Architecture
 The system consists of the following core components.
