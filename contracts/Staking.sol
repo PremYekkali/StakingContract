@@ -40,11 +40,13 @@ contract Staking {
     // Interest and staker data
     InterestData public interestData;
 
+    // The time when staking is gonna begin
     uint public stakingStartTime;
 
+    // Total reward amount that's gonna be released throughout the staking active time
     uint public totalReward;
 
-    // unclaimed reward will be trasfered to this account
+    // unclaimed reward will be transferred to this account
     address public vaultAddress; 
 
     // 10^18
@@ -54,7 +56,7 @@ contract Staking {
     uint256 public stakingPeriod;
 
     /**
-     * @dev Emitted when `staker` stake `value` tokens.
+     * @dev Emitted when `staker` stakes `value` tokens.
      */
     event Staked(address indexed staker, uint256 value, uint256 _globalYieldPerToken);
 
@@ -169,7 +171,7 @@ contract Staking {
     }
 
     /**
-     * @dev Withdraws the sender staked Token.
+     * @dev Withdraws the sender's staked Token.
      */
     function withdrawStakeAndInterest(uint256 _amount) external {
         Staker storage staker = interestData.stakers[msg.sender];
@@ -396,6 +398,7 @@ contract Staking {
 
     }
 }
+
 
 
 
