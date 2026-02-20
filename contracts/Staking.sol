@@ -254,14 +254,14 @@ contract Staking {
     }
 
     /**
-     * @dev Calculates Interest for staker for their stake.
+     * @dev Calculates Interest for the staker for their stake.
      *
      * Formula:
      * EarnedInterest = MAX[TotalStaked x GlobalYield - (StakeBuyinRate + WithdrawnToDate), 0]
      *
      * @param _staker                     Staker's address
      *
-     * @return The amount of tokens credit for the staker.
+     * @return The amount of tokens credited for the staker.
      */
     function calculateInterest(address _staker)
         public
@@ -292,7 +292,7 @@ contract Staking {
     }
 
     /**
-     * @dev Calculates and updates new accrued amount per token since last update.
+     * @dev Calculates and updates the new accrued amount per token since last update.
      *
      * Formula:
      * GlobalYield = GlobalYield(P) + newlyGeneratedInterest/GlobalTotalStake.
@@ -328,9 +328,9 @@ contract Staking {
      * @param _staker Address of staker.
      * @return Total staked.
      * @return Total reward to be distributed.
-     * @return estimated reward for user at end of staking period if no one stakes from current time.
+     * @return estimated reward for user at the end of the staking period if no one stakes from the current time.
      * @return Unlocked reward based on elapsed time.
-     * @return Accrued reward for user till now.
+     * @return Accrued reward for the user till now.
      */
     function getStatsData(address _staker) external view returns(uint, uint, uint, uint, uint)
     {
@@ -398,6 +398,7 @@ contract Staking {
 
     }
 }
+
 
 
 
