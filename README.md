@@ -81,7 +81,7 @@ Returns protocol and user-level statistics, including estimated rewards and unlo
 ## Staking Lifecycle
 1. Contract is deployed with staking start time, staking period, total reward, and vault address
 2. Users stake tokens during the active staking window
-3. Rewards accrue continuously over time
+3. Rewards accrue continuously over time till staking is active
 4. Users may claim rewards independently or withdraw their stake, with rewards automatically settled during stake withdrawal
 5. Undistributed rewards are transferred to the vault address, which was set during deployment.
 
