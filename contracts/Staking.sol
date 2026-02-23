@@ -330,7 +330,7 @@ contract Staking {
      * @return Total reward to be distributed.
      * @return estimated reward for user at the end of the staking period if no one stakes from the current time.
      * @return Unlocked reward based on elapsed time.
-     * @return Accrued reward for the user till now.
+     * @return Accrued reward for the user till the current time.
      */
     function getStatsData(address _staker) external view returns(uint, uint, uint, uint, uint)
     {
@@ -398,6 +398,7 @@ contract Staking {
 
     }
 }
+
 
 
 
