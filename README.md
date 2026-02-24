@@ -5,7 +5,7 @@
 ---
 
 ## Overview
-This repository contains a Solidity-based staking contract that enables users to stake ERC20 tokens and earn rewards over a fixed staking period. Rewards accrue continuously and are distributed proportionally based on stake size and time participation using a global yield per token model.
+This repository contains a Solidity-based staking contract that enables users to stake ERC20 tokens and earn rewards over a fixed staking period. Rewards accrue continuously and are distributed proportionally based on stake size and time of participation, using a global yield-per-token model.
 
 
 The contract fairly distributes rewards based on stake size and staking duration while supporting multiple stakes and withdrawal operations.
