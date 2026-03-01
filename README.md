@@ -18,7 +18,7 @@ The contract fairly distributes rewards based on stake size and staking duration
 - Automatic handling of unclaimed rewards(Accrued between stake start time and 1st stake) via a vault address
 
 ## Contract Architecture
-The system consists of the following core components.
+The staking system consists of the following core components.
 
 ### Stake Token
 ERC20 token deposited by users for staking
