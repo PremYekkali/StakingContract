@@ -17,7 +17,7 @@ contract StakeToken is ERC20 {
     }
 
     /**
-     * @dev Initialize PLOT token
+     * @dev Initialize token
      * @param _initialSupply Initial token supply
      * @param _initialTokenHolder Initial token holder address
      */
@@ -41,8 +41,7 @@ contract StakeToken is ERC20 {
     }
 
     /**
-     * @dev burns an amount of the tokens of the message sender
-     * account.
+     * @dev burns an amount of the tokens of the caller
      * @param amount The amount that will be burnt.
      */
     function burn(uint256 amount) public {
@@ -51,7 +50,7 @@ contract StakeToken is ERC20 {
 
     /**
      * @dev Burns a specific amount of tokens from the target address and decrements allowance
-     * @param from address The address which you want to send tokens from
+     * @param from address The address from which you want to burn tokens
      * @param value uint256 The amount of token to be burned
      */
     function burnFrom(address from, uint256 value) public {
@@ -60,7 +59,7 @@ contract StakeToken is ERC20 {
 
     /**
      * @dev function that mints an amount of the token and assigns it to
-     * an account.
+     * mentioned account.
      * @param account The account that will receive the created tokens.
      * @param amount The amount that will be created.
      */
@@ -75,7 +74,7 @@ contract StakeToken is ERC20 {
     }
 
     /**
-     * @dev Transfer token for a specified address
+     * @dev Transfer token to a specified address
      * @param to The address to transfer to.
      * @param value The amount to be transferred.
      */
@@ -86,8 +85,8 @@ contract StakeToken is ERC20 {
 
     /**
      * @dev Transfer tokens from one address to another
-     * @param from address The address which you want to send tokens from
-     * @param to address The address which you want to transfer to
+     * @param from address The address from which you want to send tokens
+     * @param to address The address to which you want to transfer
      * @param value uint256 the amount of tokens to be transferred
      */
     function transferFrom(
@@ -99,3 +98,4 @@ contract StakeToken is ERC20 {
         return true;
     }
 }
+
