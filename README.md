@@ -107,7 +107,7 @@ The contract exposes multiple view functions to help frontends and analytics too
 ## Known Limitations
 - Contract does not support staking before the configured start time; any attempt to stake or withdraw rewards before stakingStartTime will revert
 - Reward rate is fixed at deployment and cannot be modified
-- No emergency `withdraw` mechanism is implemented for security reasons
+- No emergency `withdraw` mechanism is implemented for security & transparency reasons
 - Solidity version is locked to 0.5.7
 
 ## Disclaimer
