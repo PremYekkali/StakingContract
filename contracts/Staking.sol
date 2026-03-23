@@ -341,6 +341,7 @@ contract Staking {
         uint accruedReward = 0;
         uint timeElapsed = now.sub(stakingStartTime);
 
+        // Should consider max staking period if time elapsed exceeds it.
         if(timeElapsed > stakingPeriod)
         {
             timeElapsed = stakingPeriod;
