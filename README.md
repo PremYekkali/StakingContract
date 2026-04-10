@@ -111,4 +111,4 @@ The contract exposes multiple view functions to help frontends and analytics too
 - Solidity version is locked to 0.5.7
 
 ## Disclaimer
-This contract has not been audited yet. It is highly recommended that anyone who wants to use it should review it thoroughly before using it in production or anywhere.
+This contract has not been audited yet. It is highly recommended that anyone who plans to use it review it thoroughly before using it in production or elsewhere.
