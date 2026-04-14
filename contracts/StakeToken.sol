@@ -6,8 +6,11 @@ import "./external/openzeppelin-solidity/math/SafeMath.sol";
 contract StakeToken is ERC20 {
     using SafeMath for uint256;
 
+    // Name of token
     string public name = "STOKEN";
+    // Symbol for token
     string public symbol = "ST";
+    // decimal on which the token will operate
     uint8 public decimals = 18;
     address public operator;
 
