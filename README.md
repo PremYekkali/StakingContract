@@ -21,10 +21,10 @@ The contract fairly distributes rewards based on stake size and staking duration
 The staking system consists of the following core components.
 
 ### Stake Token
-ERC20 token deposited by users for staking
+ERC20-compliant token deposited by users for staking
 
 ### Reward Token
-ERC20 token distributed as staking rewards
+ERC20-compliant token distributed as staking rewards
 
 ### InterestData
 Maintains global staking state, including total staked amount, accumulated yield per token, and last update timestamp
