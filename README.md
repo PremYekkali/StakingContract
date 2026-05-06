@@ -79,7 +79,7 @@ Updates the global reward distribution state based on elapsed time.
 Returns protocol and user-level statistics, including estimated rewards and unlocked rewards.
 
 ## Staking Lifecycle
-1. Contract is deployed with staking start time, staking period, total reward, and vault address
+1. The contract is deployed with staking start time, staking period, total reward, and vault address
 2. Users stake tokens during the active staking window
 3. Rewards accrue continuously over time till staking is active
 4. Users may claim rewards independently or withdraw their stake, with rewards automatically settled during stake withdrawal
