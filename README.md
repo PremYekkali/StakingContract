@@ -102,7 +102,7 @@ The contract exposes multiple view functions to help frontends and analytics too
 - Prevents reward over-distribution via buy-in rate accounting
 - Updates global state (interest and stake accounting) before modifying user balances, ensuring reward withdrawals are safe from reentrancy exploits
 - Avoids negative reward calculations
-- Redirects rewards to the vault when no active staking exists
+- Redirects rewards to the vault when no active staking exists to avoid loss of unallocated reward
 
 ## Known Limitations
 - Contract does not support staking before the configured start time; any attempt to stake or withdraw rewards before stakingStartTime will revert
