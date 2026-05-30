@@ -75,7 +75,7 @@ contract RewardToken is ERC20 {
     }
 
     /**
-     * @dev Transfer token for a specified address
+     * @dev Transfer token to a specified address
      * @param to The address to transfer to.
      * @param value The amount to be transferred.
      */
